@@ -1,0 +1,8 @@
+- hosts: [terra-ansible]
+  tasks:
+  - name: create file
+    copy:
+     dest: /home/ubuntu/index.html
+     content:  <h1>TesteAnsible-att</h1>
+  - name: create server
+    shell: "nohup busybox httpd -f -p 8080 &"
