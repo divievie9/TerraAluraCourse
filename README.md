@@ -1,3 +1,2 @@
-# TerraAluraCourse
-# TerraAluraCourse
-# TerraAluraCourse
+# IaC-AluraCourse
+
