@@ -1,8 +1,9 @@
 - hosts: [terra-ansible]
   tasks:
-  - name: create file
-    copy:
-     dest: /home/ubuntu/index.html
-     content:  <h1>TesteAnsible-att</h1>
-  - name: create server
-    shell: "nohup busybox httpd -f -p 8080 &"
+  - name: get Python3, virtualenv
+    apt:
+     pkg:
+     - python3
+     - virtualenv
+     update_cache: yes
+    become: true
