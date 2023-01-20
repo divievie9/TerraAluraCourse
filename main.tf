@@ -22,6 +22,6 @@ resource "aws_instance" "app_server" {
  
 
   tags = {
-    Name = "TerraformScript"
+    Name = "Ter-Ans(Python)"
   }
 }
