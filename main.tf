@@ -10,18 +10,23 @@ terraform {
 }
 
 provider "aws" {
- 
+
   region  = "us-west-2"
 }
 
+resource "aws_security_group" "default" {
+  
+}
 resource "aws_instance" "app_server" {
-  ami           = "ami-04bad3c587fe60d89"
+  ami  = "ami-0fcf52bcf5db7b003"
   instance_type = "t2.micro"
-  key_name = "JoseAWS-SSH"
+  key_name = "ServerAccess"
   user_data_replace_on_change = true
  
 
   tags = {
-    Name = "Ter-Ans(Python)"
+    Name = "TesteNovaChave"
   }
+
+  vpc_security_group_ids = [aws_security_group.default.id]
 }
